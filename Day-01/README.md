@@ -16,7 +16,6 @@ Number of threads = 3
 Increments per thread = 100,000
 
 Expected count = 3 × 100,000
-
                = 300,000
               
 ---
@@ -53,7 +52,6 @@ This ensures that only one thread at a time can execute the method.
 ## M1.java
 
 public class M1 extends Thread {
-
     static int count = 0;
 
     @Override
@@ -108,9 +106,11 @@ static int count = 0;
 we use:
 
 static AtomicInteger count = new AtomicInteger(0);
+
 And instead of:
 
 count++;
+
 we use:
 
 count.incrementAndGet();
@@ -118,7 +118,6 @@ count.incrementAndGet();
 ## M1.java
 
 import java.util.concurrent.atomic.AtomicInteger;
-
 public class M1 extends Thread {
 
     static AtomicInteger count = new AtomicInteger(0);
@@ -199,24 +198,33 @@ count.get();
 # 🧠 Key Takeaways
 
 1.Multiple threads accessing shared data can cause a race condition.
+
 2.count++ is not atomic.
+
 3.join() waits for threads to finish but does not prevent race conditions.
+
 4.synchronized provides mutual exclusion using a lock.
+
 5.AtomicInteger provides atomic operations without explicitly using synchronized.
+
 6.Both approaches can safely produce the expected result of 300000.
 
 ## Important distinction
 
-
 join()
+
   ↓
+  
 Wait for thread to finish
 
 synchronized
+
   ↓
+  
 Allow only one thread at a time
 
 AtomicInteger
-  ↓
-Perform integer operations atomically
 
+  ↓
+  
+Perform integer operations atomically
