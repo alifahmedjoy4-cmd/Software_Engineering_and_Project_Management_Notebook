@@ -51,7 +51,9 @@ This ensures that only one thread at a time can execute the method.
 
 ## M1.java
 
+
 public class M1 extends Thread {
+
     static int count = 0;
 
     @Override
@@ -68,7 +70,9 @@ public class M1 extends Thread {
 
 ## Main.java
 
+
 public class Main {
+
     public static void main(String[] args) throws InterruptedException {
 
         M1 t1 = new M1();
@@ -117,7 +121,9 @@ count.incrementAndGet();
 
 ## M1.java
 
+
 import java.util.concurrent.atomic.AtomicInteger;
+
 public class M1 extends Thread {
 
     static AtomicInteger count = new AtomicInteger(0);
@@ -132,7 +138,9 @@ public class M1 extends Thread {
 
 ## Main.java
 
+
 public class Main {
+
     public static void main(String[] args) throws InterruptedException {
 
         M1 t1 = new M1();
