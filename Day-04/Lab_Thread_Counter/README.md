@@ -50,7 +50,7 @@ If the non-static total is 0: the difference is 0% when both counts are 0, other
 
 ```
 .
-├── Firstname_Thread.java   # Single-class solution (rename to your first name)
+├── Alif_Thread.java   # Single-class solution (rename to your first name)
 └── README.md
 ```
 
