@@ -157,14 +157,9 @@ Manual test cases cover login recording, empty-username validation, repeated-fai
 
 ## 👤 Author
 
-**Alif Ahmed Joy** 
-- ID: IT24015
-- 3rd Year 1st Semester, Session 2023–24,
-- Department of ICT, MBSTU
+**Alif Ahmed Joy** - ID: IT24015, 3rd Year 1st Semester, Session 2023–24, Department of ICT, MBSTU
 
-**Supervisor:** Dr. Ziaur Rahman
-- Professor
-- Dept. of ICT, MBSTU
+**Supervisor:** Dr. Ziaur Rahman, Professor, Dept. of ICT, MBSTU
 
 ## 📄 License
 
