@@ -1,4 +1,4 @@
-# 🔐 CyberSecurity Monitor
+# 🔐 CyberSecurity Monitor System
 
 A lightweight **Java Swing desktop application** for **login monitoring**, **security checklist auditing** and **software update tracking** — all in one place, with no database server required.
 
