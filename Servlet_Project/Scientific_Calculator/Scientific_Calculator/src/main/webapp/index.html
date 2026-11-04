@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scientific Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="status">
+    <h1>Scientific Calculator</h1>
+</div>
+
+<div class="calculator">
+
+    <h2>Scientific Calculator</h2>
+
+    <!-- Calculator Display -->
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+
+        <button class="function" onclick="clearDisplay()">AC</button>
+        <button class="function" onclick="deleteLast()">DEL</button>
+        <button class="function" onclick="number('%')">%</button>
+        <button class="operator" onclick="number('/')">÷</button>
+
+        <button onclick="number('7')">7</button>
+        <button onclick="number('8')">8</button>
+        <button onclick="number('9')">9</button>
+        <button class="operator" onclick="number('*')">×</button>
+
+        <button onclick="number('4')">4</button>
+        <button onclick="number('5')">5</button>
+        <button onclick="number('6')">6</button>
+        <button class="operator" onclick="number('-')">−</button>
+
+        <button onclick="number('1')">1</button>
+        <button onclick="number('2')">2</button>
+        <button onclick="number('3')">3</button>
+        <button class="operator" onclick="number('+')">+</button>
+
+        <button onclick="number('0')">0</button>
+
+        <!-- Decimal / Float Support -->
+        <button onclick="number('.')">.</button>
+
+        <button class="function" onclick="number('^')">xʸ</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+        <button class="function" onclick="scientific('sqrt')">√</button>
+        <button class="function" onclick="scientific('sin')">sin</button>
+        <button class="function" onclick="scientific('cos')">cos</button>
+        <button class="function" onclick="scientific('tan')">tan</button>
+
+        <button class="function" onclick="scientific('log')">log</button>
+        <button class="function" onclick="scientific('ln')">ln</button>
+
+    </div>
+
+    <p id="message"></p>
+
+    <!-- Calculation History -->
+    <a href="history" target="_blank">
+        View Calculation History
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
