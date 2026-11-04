@@ -1,195 +1,99 @@
-# 🧮 Scientific Calculator
+# PC#1 - ICT 21 Batch | Java Problem Solutions
 
-A web-based **Scientific Calculator** that performs basic arithmetic and advanced scientific operations, and automatically **stores every calculation in a MySQL database** so users can review their past calculations on a dedicated history page.
-
----
-
-## 👤 Author
-
-**Alif Ahmed Joy**
-Roll: **IT24015**
-
-## 🎓 Supervised By
-
-**Dr. Ziaur Rahman**
-Professor
-Department of ICT, MBSTU
+| | |
+|---|---|
+| **Name** | Alif Ahmed Joy |
+| **Student ID** | IT24015 |
+| **Department** | Information and Communication Technology (ICT) |
+| **University** | Mawlana Bhashani Science and Technology University (MBSTU) |
+| **Year / Semester** | 3rd Year, 1st Semester (Session 2023-24) |
+| **Contest** | PC#1 - ICT 21 Batch (HackerRank) |
+| **Language** | Java (Basic) |
 
 ---
 
-## 📌 Project Overview
+## Problems Solved
 
-| Item | Details |
-|------|---------|
-| **Project Name** | Scientific Calculator |
-| **Type** | Web Application |
-| **Database** | MySQL (`scientific_calculator`) |
-| **Local URL** | <http://localhost:8080/Scientific_Calculator/> |
+| # | Problem | Difficulty | Max Score | Status |
+|---|---------|-----------|-----------|--------|
+| 1 | Prime Checker | Medium | 3 | Solved |
+| 2 | Java Primality Test | Easy | 2 | Solved |
 
 ---
 
-## ✨ Features
+## Problem 1: Prime Checker
 
-- ➕ **Basic operations:** addition, subtraction, multiplication, division, percentage
-- 🔬 **Scientific functions:** `sin`, `cos`, `tan`, `log`, `ln`, `√` (square root), `xʸ` (power)
-- 📐 **Trigonometry in degrees** — e.g. `sin(90°) = 1`
-- ⌫ **Editing controls:** `AC` (clear all) and `DEL` (delete last character)
-- 💾 **Automatic history saving** — each calculation is saved to MySQL with its timestamp
-- 📜 **Calculation History page** — view all past calculations (newest first) in a clean table
-- 🎨 **Clean, responsive UI** with a modern card-style design
+**Task:** Check whether the given number(s) are prime using a Java class and its methods.
 
----
+**Approach:**
+1. Handle the base cases (numbers less than 2 are not prime).
+2. Test divisibility from 2 up to the square root of the number.
+3. If no divisor is found, the number is prime.
 
-## 🖼️ Screenshots
+**Time Complexity:** O(√n) per number
 
-### 1. Calculator Interface
+**Solution:** [`PrimeChecker.java`](./PrimeChecker.java)
 
-Open the app at: **<http://localhost:8080/Scientific_Calculator/>**
+**Result:** All test cases passed.
 
-<img width="1037" height="882" alt="Scientific Calculator UI" src="calculator-ui.png" />
-
-### 2. Calculation History
-
-Click **"View Calculation History"** at the bottom of the calculator to see every saved calculation with its ID, expression, result, and date/time.
-
-<img width="1853" height="508" alt="Calculation History" src="calculation-history.png" />
-
-### 3. MySQL Database – History Table
-
-All calculations are stored in the `calculation_history` table of the `scientific_calculator` database.
-
-<img width="647" height="685" alt="MySQL Database History Table" src="mysql-history-table.png" />
+![Prime Checker Result](./images/Problem1.png)
 
 ---
 
-## 🔄 Workflow
+## Problem 2: Java Primality Test
 
-The application follows this step-by-step flow:
+**Task:** Determine whether a given number is prime or not.
 
-```mermaid
-flowchart TD
-    A[User opens the calculator<br/>localhost:8080/Scientific_Calculator] --> B[User enters numbers and<br/>selects an operation or function]
-    B --> C[User presses '=']
-    C --> D[Server receives the expression]
-    D --> E[Expression is evaluated<br/>basic / scientific operation]
-    E --> F[Result is displayed on the screen]
-    E --> G[(Expression + Result + Timestamp<br/>saved to MySQL<br/>calculation_history)]
-    G --> H[User clicks<br/>'View Calculation History']
-    H --> I[Records fetched from MySQL<br/>ordered by newest first]
-    I --> J[History displayed in a table<br/>ID · Expression · Result · Date]
-```
+**Approach:**
+1. Use Java's built-in `BigInteger.isProbablePrime()` method, or check divisibility up to √n.
+2. Print `prime` or `not prime` accordingly.
 
-**In simple steps:**
+**Solution:** [`PrimalityTest.java`](./PrimalityTest.java)
 
-1. **Input** – The user types numbers and picks an operator or scientific function (`sin`, `cos`, `tan`, `log`, `ln`, `√`, `xʸ`).
-2. **Calculate** – On pressing `=`, the expression is sent to the backend and evaluated.
-3. **Display** – The result is shown instantly on the calculator display.
-4. **Store** – The expression, result, and current date-time are inserted into the `calculation_history` table in MySQL.
-5. **Review** – Clicking **View Calculation History** retrieves all saved records from the database and shows them in a table, latest first.
+**Result:** All test cases passed.
+
+![Primality Test Result](./images/Problem2.png)
 
 ---
 
-## 🗄️ Database Design
+## Contest Overview
 
-**Database:** `scientific_calculator`
-**Table:** `calculation_history`
+Both problems show **Solved** status on the contest page.
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | INT, PRIMARY KEY, AUTO_INCREMENT | Unique ID of each calculation |
-| `expression` | VARCHAR | The expression entered by the user (e.g. `sin(90.0°)`) |
-| `result` | DOUBLE / VARCHAR | Computed result |
-| `created_at` | TIMESTAMP | Date and time of the calculation |
+![Contest Overview](./images/Leader_board.png)
 
-**Example SQL:**
+### Leaderboard
 
-```sql
-CREATE DATABASE IF NOT EXISTS scientific_calculator
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE scientific_calculator;
-
-CREATE TABLE IF NOT EXISTS calculation_history (
-    id         INT AUTO_INCREMENT PRIMARY KEY,
-    expression VARCHAR(255) NOT NULL,
-    result     VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-> 💡 Use `utf8mb4` so symbols like `√`, `×`, `÷`, and `°` are stored correctly (not as `?`).
+![Leaderboard](./images/image.png)
 
 ---
 
-## ⚙️ Installation & Setup
-
-### Prerequisites
-
-- JDK 8 or later
-- Apache Tomcat (running on port **8080**)
-- MySQL Server
-- An IDE such as Eclipse / IntelliJ IDEA / NetBeans (optional)
-
-### Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/<your-username>/Scientific_Calculator.git
-   ```
-2. **Create the database** – run the SQL script shown in the Database Design section in MySQL.
-3. **Configure the database connection** – update the MySQL username, password, and URL in the project's database connection file.
-4. **Add the MySQL JDBC driver** (`mysql-connector-j`) to the project's `lib` folder / dependencies.
-5. **Deploy on Tomcat** – build the project and deploy it to Apache Tomcat.
-6. **Run the application** – open your browser and visit:
-
-   👉 **<http://localhost:8080/Scientific_Calculator/>**
-
----
-
-## 🛠️ Technologies Used
-
-| Layer | Technology |
-|-------|------------|
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Java (JSP / Servlet) on Apache Tomcat |
-| Database | MySQL |
-
----
-
-## 📂 Project Structure (Overview)
+## Repository Structure
 
 ```
-Scientific_Calculator/
-├── calculator-ui.png           # README screenshots
-├── calculation-history.png
-├── mysql-history-table.png
-├── src/                        # Backend source code
-├── webapp/                     # Frontend pages (calculator + history)
-└── README.md
+.
+├── README.md
+├── PrimeChecker.java
+├── PrimalityTest.java
+└── images/
+    ├── Problem1.png
+    ├── Problem2.png
+    ├── Leader_board.png
+    └── image.png
 ```
 
 ---
 
-## 🚀 Future Improvements
+## How to Run
 
-- Add more functions (factorial, inverse trigonometric, `π`, `e`)
-- Degree / Radian mode toggle
-- Option to clear or delete history records
-- Keyboard input support
-- Dark mode
+```bash
+javac PrimeChecker.java
+java PrimeChecker
 
----
-
-## 🙏 Acknowledgement
-
-This project was developed under the supervision of **Dr. Ziaur Rahman**, Professor, Department of ICT, MBSTU. Sincere thanks for the guidance and support.
+javac PrimalityTest.java
+java PrimalityTest
+```
 
 ---
 
-## 📄 License
-
-This project is created for academic and learning purposes.
-
----
-
-<p align="center">Made with ❤️ by <b>Alif Ahmed Joy (IT24015)</b></p>
+**Author:** Alif Ahmed Joy (IT24015), Dept. of ICT, MBSTU
