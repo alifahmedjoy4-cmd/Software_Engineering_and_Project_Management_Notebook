@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Project calculator</h1>
+  <p>Pick the dates. See what to finish each day, and how much is done by any date you check.</p>
+</header>
+
+<main>
+  <section class="card controls" aria-label="Dates">
+    <label>Start date <input type="date" id="start" value="2026-11-08"></label>
+    <label>Last date <input type="date" id="end" value="2027-01-31"></label>
+    <label>Check date <input type="date" id="asOf"></label>
+    <fieldset>
+      <legend>Weekly off days</legend>
+      <div class="days" id="offDays"></div>
+    </fieldset>
+    <label class="wide">Holidays (comma separated, yyyy-mm-dd)
+      <input type="text" id="holidays" placeholder="2026-12-16, 2027-02-21">
+    </label>
+    <div class="actions">
+      <button id="saveBtn" class="primary">Save this plan</button>
+      <button id="resetBtn">Reset dates</button>
+    </div>
+  </section>
+
+  <div id="error" class="error" role="alert" hidden></div>
+  <div id="notice" class="notice" role="status" hidden></div>
+
+  <section class="stats" id="stats" aria-label="Summary"></section>
+
+  <section class="card progress" id="progress" hidden>
+    <p id="progressMsg"></p>
+    <div class="meter"><div id="meterFill"></div></div>
+  </section>
+
+  <section class="card">
+    <h2>Gantt chart</h2>
+    <div class="legend" id="legend"></div>
+    <div class="gantt-scroll" id="gantt"></div>
+  </section>
+
+  <section class="card">
+    <h2>Task schedule</h2>
+    <div class="table-wrap"><table id="taskTable"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Day by day</h2>
+    <div class="table-wrap tall"><table id="dailyTable"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Tasks</h2>
+    <form id="taskForm" class="task-form">
+      <input name="phase" placeholder="Phase" required>
+      <input name="name" placeholder="Task name" required>
+      <input name="hours" type="number" min="0.5" step="0.5" placeholder="Hours" required>
+      <button class="primary" type="submit">Add task</button>
+    </form>
+    <div class="table-wrap"><table id="taskList"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Saved plans</h2>
+    <div class="table-wrap"><table id="history"></table></div>
+  </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
