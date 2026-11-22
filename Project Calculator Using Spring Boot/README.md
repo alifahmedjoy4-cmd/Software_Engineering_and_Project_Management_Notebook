@@ -1,6 +1,6 @@
 <div align="center">
 
-# Project Calculator
+# Project Calculator Using Spring Boot
 
 **Give it a start date and a last date. It tells you what to finish every single day.**
 
