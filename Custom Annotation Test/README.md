@@ -12,6 +12,7 @@
 **Student:** Alif Ahmed Joy &nbsp;|&nbsp; **ID:** IT24015
 
 **Supervised By**
+
 **Dr. Ziaur Rahman**
 
 Professor
@@ -29,8 +30,6 @@ Department of ICT, MBSTU.
 3. 🧩 [My Work, Topic by Topic (with marks)](#3--my-work-topic-by-topic)
 4. 🗺️ [Annotation Usage Map](#4--annotation-usage-map)
 5. 🖥️ [Program Output](#5--program-output)
-6. 🧮 [Marks Summary](#6--marks-summary)
-7. 📂 [Full Source Code](#7--full-source-code)
 
 ---
 
@@ -81,7 +80,7 @@ Every project in the Campus IT Lab repeats the same boilerplate: creating object
 
 ---
 
-# 2. 👤 My Bio Data
+# 2. 👤 Bio Data
 
 - **Name:** Alif Ahmed Joy
 - **Student ID:** IT24015
