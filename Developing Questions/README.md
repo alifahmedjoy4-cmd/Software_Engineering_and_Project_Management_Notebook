@@ -17,10 +17,8 @@
 ## 📑 Table of Contents
 1. [Overview](#-overview)
 2. [Unique Design & Model](#-unique-design--model)
-3. [Course Outcomes (CO)](#-course-outcomes-co)
 4. [Question–Topic–CO Mapping](#-questiontopicco-mapping)
 5. [Question Paper](#-question-paper)
-6. [Submission Details](#-submission-details)
 
 ---
 
@@ -59,21 +57,6 @@ flowchart LR
     F --> G[Answer Guide + Marking Scheme]
     G --> H[Mapping Table + README]
 ```
----
-
-## 🎓 Course Outcomes (CO)
-
-> ⚠️ **Draft wording.** Replace with the exact statements from the official course outline.
-
-| CO | Statement (draft) | Domain | Level |
-|----|-------------------|--------|-------|
-| **CO1** | Describe the software design process and explain the design principles of coupling and cohesion. | Cognitive | C1, C2 |
-| **CO2** | Recall and define object-oriented design quality metrics (CK suite and LCOM family). | Cognitive | C1 |
-| **CO3** | Explain software architecture and common architectural styles with examples. | Cognitive | C2 |
-| **CO4** | Recall the classification of GoF design patterns and explain the Strategy pattern. | Cognitive | C1, C2 |
-| **CO5** | Explain the MVC architecture and compare controller approaches (Page vs Front Controller). | Cognitive | C2 |
-
-
 ---
 
 ## 🗺️ Question–Topic–CO Mapping
@@ -115,14 +98,14 @@ flowchart LR
 ---
 
 
-## Submitted By**
+## Submitted By
 
 - **Name:** Alif Ahmed Joy
 - **ID:** IT24015
 - **Session:** 2023-24
 - Department of ICT, MBSTU
 
- ##Supervised By
+ ## Supervised By
 
 - Dr. Ziaur Rahman
 - Professor
